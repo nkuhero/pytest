@@ -23,7 +23,7 @@ def now():
     print( datetime.datetime.now())
 
 
-@log("execute")
+@log2("execute")
 def now2():
     print(datetime.datetime.now())
 
