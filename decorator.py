@@ -1,8 +1,9 @@
 import datetime
+from functools import wraps
 
 
-
-def log(func):
+def log(func):  
+    @wraps(func)
     def wrapper(*args, **kw):
         print('call %s():' % func.__name__)
         return func(*args, **kw)
@@ -11,6 +12,7 @@ def log(func):
 
 def log2(text):
     def decorator(func):
+        @wraps(func)
         def wrapper(*args, **kw):
             print('%s %s():' % (text, func.__name__))
             return func(*args, **kw)
@@ -28,5 +30,7 @@ def now2():
     print(datetime.datetime.now())
 
 if __name__ == "__main__":
+    print now2.__name__
+    print now.__name__
     now()
     now2()
