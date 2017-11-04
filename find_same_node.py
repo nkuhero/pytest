@@ -1,3 +1,4 @@
+#交叉链表求交点
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.next = next
