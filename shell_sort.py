@@ -9,7 +9,7 @@ def shell_sort(li):
             # 每个步长进行插入排序
             key = li[i]
             j = i
-            while j >= gap and li[j-gap] > key:
+            while j - gap >= 0 and li[j-gap] > key:
                 li[j] = li[j-gap]
                 li[j-gap] = key
                 j -= gap
