@@ -1,14 +1,14 @@
-def two_num(nums, target):
-    hash = {}
-    for i in range(len(nums)):
-        if target - nums[i] in hash: 
-            return [hash[target - nums[i]], i]
-        else:
-            hash[nums[i]] = i
-
-    return [-1, -1]
-
-nums = [2, 7, 11, 15]
-target = 18
-
-print(two_num(nums, target))
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        result = {}
+        for i in range(len(nums)):
+            if target - nums[i] not in result:
+                result[nums[i]] = i
+            else:
+                return [result[target - nums[i]], i]
+        return [-1, -1]
